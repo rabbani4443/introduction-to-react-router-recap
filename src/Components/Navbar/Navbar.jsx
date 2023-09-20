@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Link from "../Link/Link";
+import NavLink from "../NavLink/NavLink";
 import { FiMenu } from 'react-icons/fi';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 
@@ -7,7 +7,7 @@ const Navbar = () => {
     const[open, setOpen]=useState(false);
     const routes = [
         {id: 1, name: "Home", path: "/"},
-        {id: 2, name: "About", path: "/about"},
+        {id: 2, name: "Posts", path: "/posts"},
         {id: 3, name: "Products", path: "/products"},
         {id: 4, name: "Contact", path: "/contact"},
         {id: 5, name: "Profile", path: "/profile"}
@@ -25,7 +25,7 @@ const Navbar = () => {
               ${open? 'left-0': '-left-60'}
               `} >
                 {
-                  routes.map(route => <Link key={route.id} route={route} ></Link> )
+                  routes.map(route => <NavLink key={route.id} route={route} ></NavLink> )
                 }
                 </ul>
             </nav>
